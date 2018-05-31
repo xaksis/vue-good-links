@@ -33,6 +33,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "hoek": "^4.2.1",
     "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
