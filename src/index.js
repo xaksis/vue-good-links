@@ -1,7 +1,17 @@
-import BounceUpLink from './bounce-up/bounce-up-link.vue';
+import VglWave from './vgl-wave/vgl-wave.vue';
+import VglRollup from './vgl-rollup/vgl-rollup.vue';
+import VglSlidein from './vgl-slidein/vgl-slidein.vue';
+import VglGhost from './vgl-ghost/vgl-ghost.vue';
+import VglSwing from './vgl-swing/vgl-swing.vue';
+import VglRotate from './vgl-rotate/vgl-rotate.vue';
 
 const components = {
-  [BounceUpLink.name]: BounceUpLink,
+  [VglWave.name]: VglWave,
+  [VglRollup.name]: VglRollup,
+  [VglSlidein.name]: VglSlidein,
+  [VglGhost.name]: VglGhost,
+  [VglSwing.name]: VglSwing,
+  [VglRotate.name]: VglRotate,
 };
 
 function install(Vue, options) {
@@ -21,5 +31,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default { install };
 
-export { BounceUpLink };
+export {
+  VglWave,
+  VglRollup,
+  VglSlidein,
+  VglGhost,
+  VglSwing,
+  VglRotate,
+};
 

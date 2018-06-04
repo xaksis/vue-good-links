@@ -1,12 +1,13 @@
 <template>
 <span
-    class="vgl-wrap"
+    class="vgl-wave-wrap"
     @mouseover="startAnimating"
     @mouseleave="stopAnimating">
   <span
     class="vgl-lettr"
     :class="{'vgl-active': activeIndex === idx}"
-    v-for="(l, idx) in letters" :key="idx"><span class="vgl-lettr-inner">{{l}}</span><span style="opacity: 0;">{{l}}</span></span>
+    v-for="(l, idx) in letters"
+    :key="idx"><span class="vgl-lettr-inner">{{l}}</span><span style="opacity: 0;">{{l}}</span></span>
 </span>
 </template>
 
@@ -15,9 +16,12 @@ import debounce from 'lodash.debounce';
 
 export default {
   name: 'bounce-up-link',
-  props: [
-    'text',
-  ],
+  props: {
+    text: {
+      type: String,
+      default: 'Sample Text',
+    },
+  },
   data() {
     return {
       activeIndex: -1,
@@ -38,13 +42,16 @@ export default {
 
       for (let i = 0; i < this.letters.length; i++) {
         this.timeouts.push(setTimeout(() => {
+          // start animating right away
           this.activeIndex = i;
+
+          // repeat animation for as long as I'm hovering
           this.intervals.push(setInterval(() => {
             this.activeIndex = i;
           }, this.letters.length * delay));
         }, i * delay));
       }
-    }, 350),
+    }, 150),
 
     stopAnimating: debounce(function () {
       for (let i = 0; i < this.timeouts.length; i++) {
@@ -54,7 +61,7 @@ export default {
       this.timeouts = [];
       this.intervals = [];
       this.activeIndex = -1;
-    }, 350),
+    }, 150),
   },
   mounted() {
   },
@@ -64,19 +71,19 @@ export default {
 </script>
 
 <style lang="scss">
-.vgl-wrap{
+.vgl-wave-wrap{
   position: relative;
   .vgl-lettr{
     position: relative;
     .vgl-lettr-inner{
       position: absolute;
-      transition: all 0.1s ease-in;
+      transition: all 0.15s ease-out;
       bottom: 0;
     }
     &.vgl-active{
       .vgl-lettr-inner{
         // color: red;
-        bottom: 15%;
+        bottom: 20%;
       }
     }
   }
