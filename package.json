@@ -11,6 +11,7 @@
   "scripts": {
     "bundle": "bili",
     "dev": "poi",
+    "dev-build": "poi build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,7 +26,7 @@
   },
   "poi": {
     "entry": "dev/main.js",
-    "dist": "dev/dist",
+    "outDir": "doc",
     "homepage": "./",
     "html": {
       "template": "dev/index.html"
@@ -39,6 +40,7 @@
     "bili": "^3.1.2",
     "node-sass": "^4.9.0",
     "poi": "^10.2.1",
+    "prismjs": "^1.14.0",
     "rollup-plugin-vue": "^3.0.0",
     "sass-loader": "^7.0.1"
   }

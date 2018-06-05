@@ -31,7 +31,6 @@ export default {
       // eslint-disable-next-line
       default: () => {
         return {
-          padding: '0px 5px',
         };
       },
     },
@@ -40,7 +39,6 @@ export default {
       // eslint-disable-next-line
       default: () => {
         return {
-          padding: '0px 5px',
         };
       },
     },
@@ -55,12 +53,14 @@ export default {
     internalOriginalSpanStyle() {
       return {
         ...this.originalSpanStyle,
+        padding: '0px 5px',
         transformOrigin: `50% 50% -${this.spanWidth}`,
       };
     },
     internalBoldSpanStyle() {
       return {
         ...this.replaceSpanStyle,
+        padding: '0px 5px',
         transformOrigin: `50% 50% ${this.spanWidth}`,
       };
     },

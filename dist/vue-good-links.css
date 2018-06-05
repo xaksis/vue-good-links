@@ -1,0 +1,100 @@
+.vgl-wave-wrap {
+  position: relative; }
+  .vgl-wave-wrap .vgl-lettr {
+    position: relative; }
+    .vgl-wave-wrap .vgl-lettr .vgl-lettr-inner {
+      position: absolute;
+      transition: all 0.15s ease-out;
+      bottom: 0; }
+    .vgl-wave-wrap .vgl-lettr.vgl-active .vgl-lettr-inner {
+      bottom: 20%; }
+
+.vgl-rollup-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden; }
+  .vgl-rollup-wrap .vgl-rollup-original, .vgl-rollup-wrap .vgl-rollup-bold {
+    transition: all 0.3s;
+    display: inline-block;
+    position: absolute; }
+  .vgl-rollup-wrap .vgl-rollup-bold {
+    font-weight: bold; }
+
+.vgl-slidein-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  white-space: nowrap; }
+  .vgl-slidein-wrap .vgl-slidein-original, .vgl-slidein-wrap .vgl-slidein-bold {
+    transition: all 0.3s;
+    display: inline-block;
+    position: absolute; }
+
+.vgl-ghost-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap; }
+  .vgl-ghost-wrap .vgl-ghost-original, .vgl-ghost-wrap .vgl-ghost-bold {
+    transition: all 0.3s;
+    display: inline-block;
+    position: absolute; }
+  .vgl-ghost-wrap .vgl-ghost-original {
+    opacity: 0.6; }
+  .vgl-ghost-wrap .vgl-ghost-bold {
+    transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0; }
+    .vgl-ghost-wrap .vgl-ghost-bold.vgl-active {
+      opacity: 1;
+      transform: scale(1) translateX(0px) translateY(0px) rotate(0deg); }
+
+.vgl-swing-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap; }
+  .vgl-swing-wrap .vgl-swing-original, .vgl-swing-wrap .vgl-swing-bold {
+    display: inline-block; }
+  .vgl-swing-wrap .vgl-swing-original {
+    opacity: 0.6;
+    transform-origin: 0% 50%;
+    transform-style: preserve-3d; }
+  .vgl-swing-wrap .vgl-swing-bold {
+    position: absolute;
+    transform: rotateX(270deg);
+    transition: transform 0.6s;
+    transform-origin: 0 0;
+    pointer-events: none;
+    background-color: black;
+    color: white; }
+  .vgl-swing-wrap.vgl-active {
+    perspective: 800px; }
+    .vgl-swing-wrap.vgl-active .vgl-swing-bold {
+      transform: rotateX(0deg); }
+
+.vgl-rotate-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap; }
+  .vgl-rotate-wrap .vgl-rotate-original, .vgl-rotate-wrap .vgl-rotate-bold {
+    display: inline-block;
+    position: absolute; }
+  .vgl-rotate-wrap .vgl-rotate-original {
+    background: grey;
+    transition: all 0.4s; }
+  .vgl-rotate-wrap .vgl-rotate-bold {
+    transform: rotateY(-90deg);
+    transition: all 0.4s;
+    background-color: black;
+    color: white; }
+  .vgl-rotate-wrap.vgl-active {
+    perspective: 800px;
+    transform-style: preserve-3d; }
+    .vgl-rotate-wrap.vgl-active .vgl-rotate-original {
+      transform: rotateY(-90deg); }
+    .vgl-rotate-wrap.vgl-active .vgl-rotate-bold {
+      transform: rotateY(0deg); }
