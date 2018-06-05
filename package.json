@@ -28,6 +28,7 @@
     "entry": "dev/main.js",
     "outDir": "docs",
     "homepage": "./",
+    "publicPath": "./",
     "html": {
       "template": "dev/index.html"
     }
