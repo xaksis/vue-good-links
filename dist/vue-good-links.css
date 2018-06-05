@@ -59,7 +59,6 @@
   .vgl-swing-wrap .vgl-swing-original, .vgl-swing-wrap .vgl-swing-bold {
     display: inline-block; }
   .vgl-swing-wrap .vgl-swing-original {
-    opacity: 0.6;
     transform-origin: 0% 50%;
     transform-style: preserve-3d; }
   .vgl-swing-wrap .vgl-swing-bold {

@@ -26,7 +26,7 @@ export default {
       type: String,
       default: 'Sample Text',
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: () => {
@@ -52,15 +52,15 @@ export default {
   computed: {
     internalOriginalSpanStyle() {
       return {
-        ...this.originalSpanStyle,
         padding: '0px 5px',
+        ...this.originalSpanStyle,
         transformOrigin: `50% 50% -${this.spanWidth}`,
       };
     },
     internalBoldSpanStyle() {
       return {
-        ...this.replaceSpanStyle,
         padding: '0px 5px',
+        ...this.hoverSpanStyle,
         transformOrigin: `50% 50% ${this.spanWidth}`,
       };
     },

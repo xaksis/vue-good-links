@@ -9,9 +9,6 @@
   <span
     :style="internalBoldSpanStyle"
     class="vgl-swing-bold">{{text}}</span>
-  <!-- <span
-    ref="originalText"
-    style="opacity: 0;">{{text}}</span> -->
 </span>
 </template>
 
@@ -25,12 +22,11 @@ export default {
       type: String,
       default: 'Sample Text',
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: () => {
         return {
-          padding: '0px 5px',
         };
       },
     },
@@ -39,7 +35,6 @@ export default {
       // eslint-disable-next-line
       default: () => {
         return {
-          padding: '0px 5px',
         };
       },
     },
@@ -53,13 +48,15 @@ export default {
   computed: {
     internalOriginalSpanStyle() {
       return {
+        padding: '0px 5px',
         ...this.originalSpanStyle,
         left: this.active ? `${this.spanWidth}` : 0,
       };
     },
     internalBoldSpanStyle() {
       return {
-        ...this.replaceSpanStyle,
+        padding: '0px 5px',
+        ...this.hoverSpanStyle,
         left: this.active ? 0 : `-${this.spanWidth}`,
       };
     },
@@ -98,7 +95,6 @@ export default {
     display: inline-block;
   }
   .vgl-swing-original{
-    opacity: 0.6;
     transform-origin: 0% 50%;
     transform-style: preserve-3d;
   }

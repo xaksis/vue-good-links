@@ -3,6 +3,7 @@
   @mouseover="startAnimating"
   @mouseleave="stopAnimating">
   <span
+    ref="mainText"
     :style="internalOriginalSpanStyle"
     class="vgl-slidein-original">{{text}}</span>
   <span
@@ -24,14 +25,11 @@ export default {
       type: String,
       default: 'Sample Text',
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: () => {
         return {
-          backgroundColor: 'black',
-          color: 'white',
-          padding: '0px 5px',
         };
       },
     },
@@ -40,7 +38,6 @@ export default {
       // eslint-disable-next-line
       default: () => {
         return {
-          padding: '0px 5px',
         };
       },
     },
@@ -54,13 +51,17 @@ export default {
   computed: {
     internalOriginalSpanStyle() {
       return {
+        padding: '0px 5px',
         ...this.originalSpanStyle,
         left: this.active ? `${this.spanWidth}` : 0,
       };
     },
     internalBoldSpanStyle() {
       return {
-        ...this.replaceSpanStyle,
+        backgroundColor: 'black',
+        color: 'white',
+        padding: '0px 5px',
+        ...this.hoverSpanStyle,
         left: this.active ? 0 : `-${this.spanWidth}`,
       };
     },
@@ -75,10 +76,9 @@ export default {
     }, 150),
 
     init() {
-      const horizontalPadding = 5;
-      const originalSpan = this.$refs.originalText;
-      console.log(originalSpan.offsetWidth);
-      this.spanWidth = `${originalSpan.offsetWidth + (horizontalPadding * 2)}px`;
+      // const horizontalPadding = 5;
+      const originalSpan = this.$refs.mainText;
+      this.spanWidth = `${originalSpan.offsetWidth}px`;
     },
   },
   mounted() {

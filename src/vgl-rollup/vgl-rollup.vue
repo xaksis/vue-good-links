@@ -3,10 +3,10 @@
   @mouseover="startAnimating"
   @mouseleave="stopAnimating">
   <span
-    :style="originalSpanStyle"
+    :style="internalOriginalSpanStyle"
     class="vgl-rollup-original">{{text}}</span>
   <span
-    :style="boldSpanStyle"
+    :style="internalBoldSpanStyle"
     class="vgl-rollup-bold">{{text}}</span>
   <span
     ref="originalText"
@@ -24,6 +24,22 @@ export default {
       type: String,
       default: 'Sample Text',
     },
+    hoverSpanStyle: {
+      type: Object,
+      // eslint-disable-next-line
+      default: () => {
+        return {
+        };
+      },
+    },
+    originalSpanStyle: {
+      type: Object,
+      // eslint-disable-next-line
+      default: () => {
+        return {
+        };
+      },
+    },
   },
   data() {
     return {
@@ -32,14 +48,15 @@ export default {
     };
   },
   computed: {
-    originalSpanStyle() {
+    internalOriginalSpanStyle() {
       return {
+        ...this.originalSpanStyle,
         top: this.active ? `-${this.spanHeight}` : 0,
-
       };
     },
-    boldSpanStyle() {
+    internalBoldSpanStyle() {
       return {
+        ...this.hoverSpanStyle,
         top: this.active ? 0 : `${this.spanHeight}`,
       };
     },
@@ -56,9 +73,10 @@ export default {
     init() {
       const originalSpan = this.$refs.originalText;
       const spanStyle = window.getComputedStyle(originalSpan, null);
-      const spanHeight = spanStyle.fontSize;
-      const num = parseInt(spanHeight.substring(0, spanHeight.length - 2), 10) * 1.2;
-      this.spanHeight = `${num}px`;
+      // console.log(spanStyle);
+      this.spanHeight = spanStyle.lineHeight;
+      // const num = parseInt(spanHeight.substring(0, spanHeight.length - 2), 10) * 1.2;
+      // this.spanHeight = `${num}px`;
     },
   },
   mounted() {

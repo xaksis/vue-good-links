@@ -3,8 +3,10 @@
   @mouseover="startAnimating"
   @mouseleave="stopAnimating">
   <span
+    style="originalSpanStyle"
     class="vgl-ghost-original">{{text}}</span>
   <span
+    style="hoverSpanStyle"
     class="vgl-ghost-bold" :class="{'vgl-active': active}">{{text}}</span>
   <span
     ref="originalText"
@@ -22,7 +24,7 @@ export default {
       type: String,
       default: 'Sample Text',
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: () => {

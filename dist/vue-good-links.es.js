@@ -53,7 +53,7 @@ var VglWave = {
     }));
   },
   staticRenderFns: [],
-  name: 'bounce-up-link',
+  name: 'vgl-wave',
   props: {
     text: {
       type: String,
@@ -129,10 +129,10 @@ var VglRollup = {
       }
     }, [_c('span', {
       staticClass: "vgl-rollup-original",
-      style: _vm.originalSpanStyle
+      style: _vm.internalOriginalSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
       staticClass: "vgl-rollup-bold",
-      style: _vm.boldSpanStyle
+      style: _vm.internalBoldSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
       ref: "originalText",
       staticStyle: {
@@ -147,6 +147,20 @@ var VglRollup = {
     text: {
       type: String,
       default: 'Sample Text'
+    },
+    hoverSpanStyle: {
+      type: Object,
+      // eslint-disable-next-line
+      default: function _default() {
+        return {};
+      }
+    },
+    originalSpanStyle: {
+      type: Object,
+      // eslint-disable-next-line
+      default: function _default() {
+        return {};
+      }
     }
   },
   data: function data() {
@@ -156,15 +170,15 @@ var VglRollup = {
     };
   },
   computed: {
-    originalSpanStyle: function originalSpanStyle() {
-      return {
+    internalOriginalSpanStyle: function internalOriginalSpanStyle() {
+      return Object.assign({}, this.originalSpanStyle, {
         top: this.active ? "-".concat(this.spanHeight) : 0
-      };
+      });
     },
-    boldSpanStyle: function boldSpanStyle() {
-      return {
+    internalBoldSpanStyle: function internalBoldSpanStyle() {
+      return Object.assign({}, this.hoverSpanStyle, {
         top: this.active ? 0 : "".concat(this.spanHeight)
-      };
+      });
     }
   },
   methods: {
@@ -176,10 +190,10 @@ var VglRollup = {
     }, 150),
     init: function init() {
       var originalSpan = this.$refs.originalText;
-      var spanStyle = window.getComputedStyle(originalSpan, null);
-      var spanHeight = spanStyle.fontSize;
-      var num = parseInt(spanHeight.substring(0, spanHeight.length - 2), 10) * 1.2;
-      this.spanHeight = "".concat(num, "px");
+      var spanStyle = window.getComputedStyle(originalSpan, null); // console.log(spanStyle);
+
+      this.spanHeight = spanStyle.lineHeight; // const num = parseInt(spanHeight.substring(0, spanHeight.length - 2), 10) * 1.2;
+      // this.spanHeight = `${num}px`;
     }
   },
   mounted: function mounted() {
@@ -206,6 +220,7 @@ var VglSlidein = {
         "mouseleave": _vm.stopAnimating
       }
     }, [_c('span', {
+      ref: "mainText",
       staticClass: "vgl-slidein-original",
       style: _vm.internalOriginalSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
@@ -225,24 +240,18 @@ var VglSlidein = {
       type: String,
       default: 'Sample Text'
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
-        return {
-          backgroundColor: 'black',
-          color: 'white',
-          padding: '0px 5px'
-        };
+        return {};
       }
     },
     originalSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
-        return {
-          padding: '0px 5px'
-        };
+        return {};
       }
     }
   },
@@ -254,12 +263,18 @@ var VglSlidein = {
   },
   computed: {
     internalOriginalSpanStyle: function internalOriginalSpanStyle() {
-      return Object.assign({}, this.originalSpanStyle, {
+      return Object.assign({
+        padding: '0px 5px'
+      }, this.originalSpanStyle, {
         left: this.active ? "".concat(this.spanWidth) : 0
       });
     },
     internalBoldSpanStyle: function internalBoldSpanStyle() {
-      return Object.assign({}, this.replaceSpanStyle, {
+      return Object.assign({
+        backgroundColor: 'black',
+        color: 'white',
+        padding: '0px 5px'
+      }, this.hoverSpanStyle, {
         left: this.active ? 0 : "-".concat(this.spanWidth)
       });
     }
@@ -272,10 +287,9 @@ var VglSlidein = {
       this.active = false;
     }, 150),
     init: function init() {
-      var horizontalPadding = 5;
-      var originalSpan = this.$refs.originalText;
-      console.log(originalSpan.offsetWidth);
-      this.spanWidth = "".concat(originalSpan.offsetWidth + horizontalPadding * 2, "px");
+      // const horizontalPadding = 5;
+      var originalSpan = this.$refs.mainText;
+      this.spanWidth = "".concat(originalSpan.offsetWidth, "px");
     }
   },
   mounted: function mounted() {
@@ -299,12 +313,14 @@ var VglGhost = {
         "mouseleave": _vm.stopAnimating
       }
     }, [_c('span', {
-      staticClass: "vgl-ghost-original"
+      staticClass: "vgl-ghost-original",
+      staticStyle: {}
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
       staticClass: "vgl-ghost-bold",
       class: {
         'vgl-active': _vm.active
-      }
+      },
+      staticStyle: {}
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
       ref: "originalText",
       staticStyle: {
@@ -319,7 +335,7 @@ var VglGhost = {
       type: String,
       default: 'Sample Text'
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
@@ -391,22 +407,18 @@ var VglSwing = {
       type: String,
       default: 'Sample Text'
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
-        return {
-          padding: '0px 5px'
-        };
+        return {};
       }
     },
     originalSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
-        return {
-          padding: '0px 5px'
-        };
+        return {};
       }
     }
   },
@@ -418,12 +430,16 @@ var VglSwing = {
   },
   computed: {
     internalOriginalSpanStyle: function internalOriginalSpanStyle() {
-      return Object.assign({}, this.originalSpanStyle, {
+      return Object.assign({
+        padding: '0px 5px'
+      }, this.originalSpanStyle, {
         left: this.active ? "".concat(this.spanWidth) : 0
       });
     },
     internalBoldSpanStyle: function internalBoldSpanStyle() {
-      return Object.assign({}, this.replaceSpanStyle, {
+      return Object.assign({
+        padding: '0px 5px'
+      }, this.hoverSpanStyle, {
         left: this.active ? 0 : "-".concat(this.spanWidth)
       });
     }
@@ -484,7 +500,7 @@ var VglRotate = {
       type: String,
       default: 'Sample Text'
     },
-    replaceSpanStyle: {
+    hoverSpanStyle: {
       type: Object,
       // eslint-disable-next-line
       default: function _default() {
@@ -507,14 +523,16 @@ var VglRotate = {
   },
   computed: {
     internalOriginalSpanStyle: function internalOriginalSpanStyle() {
-      return Object.assign({}, this.originalSpanStyle, {
-        padding: '0px 5px',
+      return Object.assign({
+        padding: '0px 5px'
+      }, this.originalSpanStyle, {
         transformOrigin: "50% 50% -".concat(this.spanWidth)
       });
     },
     internalBoldSpanStyle: function internalBoldSpanStyle() {
-      return Object.assign({}, this.replaceSpanStyle, {
-        padding: '0px 5px',
+      return Object.assign({
+        padding: '0px 5px'
+      }, this.hoverSpanStyle, {
         transformOrigin: "50% 50% ".concat(this.spanWidth)
       });
     }

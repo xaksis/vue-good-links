@@ -15,7 +15,7 @@
 import debounce from 'lodash.debounce';
 
 export default {
-  name: 'bounce-up-link',
+  name: 'vgl-wave',
   props: {
     text: {
       type: String,
