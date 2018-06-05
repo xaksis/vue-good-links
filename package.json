@@ -26,7 +26,7 @@
   },
   "poi": {
     "entry": "dev/main.js",
-    "outDir": "doc",
+    "outDir": "docs",
     "homepage": "./",
     "html": {
       "template": "dev/index.html"
