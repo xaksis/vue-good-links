@@ -1,5 +1,5 @@
 /**
- * vue-good-links v0.0.1
+ * vue-good-links v0.0.2
  * (c) 2018-present xaksis <shay@crayonbits.com>
  * https://github.com/xaksis/vue-good-links
  * Released under the MIT License.
