@@ -1,6 +1,6 @@
 {
   "name": "vue-good-links",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An easy to use link/text hover effect library for VueJS",
   "main": "dist/vue-good-links.cjs.js",
   "module": "dist/vue-good-links.es.js",
