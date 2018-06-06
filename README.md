@@ -78,7 +78,7 @@ Vue.use(VueGoodLinks);
       <td>css styles for standing text span. (applies to all but VglWave)</td>
       <td>
 <pre lang="vue">
-<vgl-swing :originalSpanStyle="{color: 'blue'}" text="fancy!"></vgl-swing>
+&lt;vgl-swing :originalSpanStyle=&quot;{color: 'blue'}&quot; text=&quot;fancy!&quot;&gt;&lt;/vgl-swing&gt;
 </pre>
       </td>
     </tr>
@@ -87,7 +87,7 @@ Vue.use(VueGoodLinks);
       <td>css styles for hovering text span. (applies to all but VglWave)</td>
       <td>
 <pre lang="vue">
-<vgl-swing :hoverSpanStyle="{color: 'blue'}" text="fancy!"></vgl-swing>
+&lt;vgl-swing :hoverSpanStyle=&quot;{color: 'blue'}&quot; text=&quot;fancy!&quot;&gt;&lt;/vgl-swing&gt;
 </pre>
       </td>
     </tr>
