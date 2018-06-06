@@ -12,7 +12,8 @@ An easy to use link/text hover effect library for VueJS
 
 [vue-good-links Demo](https://xaksis.github.io/vue-good-links/)
 
-If you endup using and liking vue-good-links, consider spreading the joy :) 
+If you endup using and liking vue-good-links, consider spreading the joy :)
+
 <a href="https://www.buymeacoffee.com/68BUXR1d9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## Follow the project progress live
