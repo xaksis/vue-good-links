@@ -65,6 +65,17 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="vgl-footer">
+        <div class="center text-muted">A project by <a href="https://github.com/xaksis">xaksis</a></div>
+        <div class="center space-top">
+          <span class="text-muted">you may also like</span> <br>
+          <a href="https://github.com/xaksis/vue-good-table">vue-good-table</a>
+          &nbsp;&nbsp; &amp; &nbsp;&nbsp;
+          <a href="https://github.com/xaksis/vue-good-wizard">vue-good-wizard</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -111,6 +122,7 @@ export default {
 }
 
 a{
+  color: #3fa46a;
   line-height: inherit;
   *{
     color: #3fa46a;
@@ -128,6 +140,18 @@ section{
 .text-muted{
   opacity: 0.7;
 }
+
+.vgl-footer{
+  margin: 100px 0px 50px 0px;
+  border-radius: 10px;
+  padding: 20px;
+  background: lighten(#e3e3e8, 5%);
+}
+
+.space-top{
+  margin-top: 20px;
+}
+
 .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
 </style>
 
