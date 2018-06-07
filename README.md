@@ -1,9 +1,9 @@
 # vue-good-links
 
-[![npm](https://img.shields.io/npm/dm/vue-good-links.svg?style=flat-square)](https://www.npmjs.com/package/vue-good-links)
+<!--- [![npm](https://img.shields.io/npm/dm/vue-good-links.svg?style=flat-square)](https://www.npmjs.com/package/vue-good-links) --->
 [![npm](https://img.shields.io/github/package-json/v/xaksis/vue-good-links.svg?style=flat-square)](https://github.com/xaksis/vue-good-links/releases)
 [![npm](https://img.shields.io/github/license/xaksis/vue-good-links.svg?style=flat-square)](https://github.com/xaksis/vue-good-links/blob/master/LICENSE)
-[![](https://data.jsdelivr.com/v1/package/npm/vue-good-links/badge)](https://www.jsdelivr.com/package/npm/vue-good-links)
+<!--- [![](https://data.jsdelivr.com/v1/package/npm/vue-good-links/badge)](https://www.jsdelivr.com/package/npm/vue-good-links) --->
 
 An easy to use link/text hover effect library for VueJS
 ![Basic Screenshot](README/vue-good-links.gif)
