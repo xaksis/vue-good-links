@@ -1,7 +1,8 @@
 <template>
 <span :style="{width: spanWidth}" class="vgl-slidein-wrap"
   @mouseover="startAnimating"
-  @mouseleave="stopAnimating">
+  @mouseleave="stopAnimating"
+  v-on="$listeners">
   <span
     ref="mainText"
     :style="internalOriginalSpanStyle"

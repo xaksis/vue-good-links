@@ -1,7 +1,8 @@
 <template>
 <span :style="{height: spanHeight}" class="vgl-rollup-wrap"
   @mouseover="startAnimating"
-  @mouseleave="stopAnimating">
+  @mouseleave="stopAnimating"
+  v-on="$listeners">
   <span
     :style="internalOriginalSpanStyle"
     class="vgl-rollup-original">{{text}}</span>

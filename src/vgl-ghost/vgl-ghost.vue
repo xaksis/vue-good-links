@@ -1,7 +1,8 @@
 <template>
 <span class="vgl-ghost-wrap"
   @mouseover="startAnimating"
-  @mouseleave="stopAnimating">
+  @mouseleave="stopAnimating"
+  v-on="$listeners">
   <span
     style="originalSpanStyle"
     class="vgl-ghost-original">{{text}}</span>
