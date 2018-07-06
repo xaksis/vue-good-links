@@ -2,7 +2,8 @@
 <span class="vgl-swing-wrap"
   :class="{'vgl-active': active}"
   @mouseover="startAnimating"
-  @mouseleave="stopAnimating">
+  @mouseleave="stopAnimating"
+  v-on="$listeners">
   <span
     :style="internalOriginalSpanStyle"
     class="vgl-swing-original">{{text}}</span>

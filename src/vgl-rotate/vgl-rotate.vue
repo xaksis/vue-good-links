@@ -2,7 +2,8 @@
 <span class="vgl-rotate-wrap"
   :class="{'vgl-active': active}"
   @mouseover="startAnimating"
-  @mouseleave="stopAnimating">
+  @mouseleave="stopAnimating"
+  v-on="$listeners">
   <span
     :style="internalBoldSpanStyle"
     class="vgl-rotate-bold">{{text}}</span>

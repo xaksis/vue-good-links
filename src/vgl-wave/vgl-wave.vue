@@ -2,7 +2,8 @@
 <span
     class="vgl-wave-wrap"
     @mouseover="startAnimating"
-    @mouseleave="stopAnimating">
+    @mouseleave="stopAnimating"
+    v-on="$listeners">
   <span
     class="vgl-lettr"
     :class="{'vgl-active': activeIndex === idx}"
