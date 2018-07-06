@@ -1,5 +1,5 @@
 /**
- * vue-good-links v0.0.2
+ * vue-good-links v0.0.3
  * (c) 2018-present xaksis <shay@crayonbits.com>
  * https://github.com/xaksis/vue-good-links
  * Released under the MIT License.
@@ -36,13 +36,13 @@ var VglWave = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-wave-wrap",
       on: {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, _vm._l(_vm.letters, function (l, idx) {
+    }, _vm.$listeners), _vm._l(_vm.letters, function (l, idx) {
       return _c('span', {
         key: idx,
         staticClass: "vgl-lettr",
@@ -124,7 +124,7 @@ var VglRollup = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-rollup-wrap",
       style: {
         height: _vm.spanHeight
@@ -133,7 +133,7 @@ var VglRollup = {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, [_c('span', {
+    }, _vm.$listeners), [_c('span', {
       staticClass: "vgl-rollup-original",
       style: _vm.internalOriginalSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
@@ -216,7 +216,7 @@ var VglSlidein = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-slidein-wrap",
       style: {
         width: _vm.spanWidth
@@ -225,7 +225,7 @@ var VglSlidein = {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, [_c('span', {
+    }, _vm.$listeners), [_c('span', {
       ref: "mainText",
       staticClass: "vgl-slidein-original",
       style: _vm.internalOriginalSpanStyle
@@ -312,13 +312,13 @@ var VglGhost = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-ghost-wrap",
       on: {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, [_c('span', {
+    }, _vm.$listeners), [_c('span', {
       staticClass: "vgl-ghost-original",
       staticStyle: {}
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
@@ -389,7 +389,7 @@ var VglSwing = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-swing-wrap",
       class: {
         'vgl-active': _vm.active
@@ -398,7 +398,7 @@ var VglSwing = {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, [_c('span', {
+    }, _vm.$listeners), [_c('span', {
       staticClass: "vgl-swing-original",
       style: _vm.internalOriginalSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
@@ -476,7 +476,7 @@ var VglRotate = {
 
     var _c = _vm._self._c || _h;
 
-    return _c('span', {
+    return _c('span', _vm._g({
       staticClass: "vgl-rotate-wrap",
       class: {
         'vgl-active': _vm.active
@@ -485,7 +485,7 @@ var VglRotate = {
         "mouseover": _vm.startAnimating,
         "mouseleave": _vm.stopAnimating
       }
-    }, [_c('span', {
+    }, _vm.$listeners), [_c('span', {
       staticClass: "vgl-rotate-bold",
       style: _vm.internalBoldSpanStyle
     }, [_vm._v(_vm._s(_vm.text))]), _vm._v(" "), _c('span', {
