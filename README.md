@@ -51,6 +51,10 @@ export default {
 or use globally
 ```js
 import VueGoodLinks from 'vue-good-links';
+
+// import the styles 
+import 'vue-good-links/dist/vue-good-links.css';
+
 Vue.use(VueGoodLinks);
 ```
 
